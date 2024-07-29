@@ -2,6 +2,7 @@ defaults:
   - _self_
   - algo: ppo
   - env: cma_es
+  - instance_set: bbob_5_01_0
   - override hydra/job_logging: colorlog
   - override hydra/hydra_logging: colorlog
 
@@ -14,6 +15,13 @@ tensorboard_file: null
 experiment_name: mighty_experiment
 
 algorithm_kwargs: {}
+env_kwargs: 
+  normalize_reward: True 
+  instance_update_func: "round_robin"
+  instance_set: ${instance_set}
+  test_set: ${instance_set}
+  config_space: {"step_size": {"type": "float", "upper": 10, "lower": 0}}
+
 
 # Training
 eval_every_n_steps: 1e4  # After how many steps to evaluate.

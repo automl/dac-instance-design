@@ -6,6 +6,7 @@ from mighty.mighty_meta import PrioritizedLevelReplay
 class ContextualPLR(PrioritizedLevelReplay):
     def __init__(
         self,
+        context_key,
         alpha=1.0,
         rho=0.2,
         staleness_coeff=0,
@@ -17,23 +18,25 @@ class ContextualPLR(PrioritizedLevelReplay):
         eps=1e-3,
     ):
         super().__init__(
-            alpha,
-            rho,
-            staleness_coeff,
-            sample_strategy,
-            score_transform,
-            temperature,
-            staleness_transform,
-            staleness_temperature,
-            eps,
+            alpha=alpha,
+            rho=rho,
+            staleness_coeff=staleness_coeff,
+            sample_strategy=sample_strategy,
+            score_transform=score_transform,
+            temperature=temperature,
+            staleness_transform=staleness_transform,
+            staleness_temperature=staleness_temperature,
+            eps=eps,
         )
+        self.context_key = context_key
 
     # TODO: this is where selector should give out scores
     # TODO: this is likely not enough info, we need the trajectory features
+    # TODO: where is this called? Function call needs to be altered to include other features
     def score_function(self, reward, values, logits):
         pass
 
-    # TODO: add trajectory features here
+    # TODO: add context key features here
     def add_rollout(self, metrics):
         """Save rollout stats.
 
