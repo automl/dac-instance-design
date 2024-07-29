@@ -46,9 +46,10 @@ clean-test: ## remove test and coverage artifacts
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
-ruff: ## run ruff as a formatter
-	python -m ruff --exit-zero contextual_dac_env_design
-	python -m ruff --silent --exit-zero --no-cache --fix contextual_dac_env_design
+format: ## run ruff as a formatter
+	python -m ruff format contextual_dac_env_design
+	python -m ruff check --exit-zero contextual_dac_env_design
+	python -m ruff check --silent --exit-zero --no-cache --fix contextual_dac_env_design
 
 test: ## run tests quickly with the default Python
 	python setup.py tests
@@ -71,7 +72,3 @@ install: clean ## install the package to the active Python's site-packages
 
 check:
 	pre-commit run --all-files
-
-format:
-	make ruff
-	make isort

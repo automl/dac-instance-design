@@ -1,7 +1,10 @@
-from mighty.mighty_runners.factory import get_runner_class
-import hydra
+from __future__ import annotations
+
 import time
+
+import hydra
 import numpy as np
+from mighty.mighty_runners.factory import get_runner_class
 
 
 @hydra.main("./configs", "base", version_base=None)
