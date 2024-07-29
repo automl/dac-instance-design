@@ -2,5 +2,5 @@
 
 num_steps: 1e6
 env: CMAESBenchmark
-env_wrappers: []
+env_wrappers: [dict_action_wrapper.DictActionWrapper]
 num_envs: 64
