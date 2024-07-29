@@ -13,7 +13,7 @@ wandb_project: null
 tensorboard_file: null
 experiment_name: mighty_experiment
 
-algorithm_kwargs: {meta_methods: [mighty.mighty_meta.PrioritizedLevelReplay]}
+algorithm_kwargs: {}
 
 # Training
 eval_every_n_steps: 1e4  # After how many steps to evaluate.

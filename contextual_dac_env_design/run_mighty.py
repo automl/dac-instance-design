@@ -4,7 +4,7 @@ import time
 import numpy as np
 
 
-@hydra.main("./configs", "plr_baseline", version_base=None)
+@hydra.main("./configs", "base", version_base=None)
 def run_mighty(cfg):
     # Make runner
     runner_cls = get_runner_class(cfg.runner)

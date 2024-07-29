@@ -11,8 +11,12 @@ dependencies = [
   "ruff","hydra-core",
   "hydra-submitit-launcher",
   "hydra_colorlog",
-  "mighty@git+https://github.com/automl-private/Mighty-DACS.git#egg=dev",
-  "dacbench@git+https://github.com/automl/DACBench.git#egg=development"
+  "mighty @ git+https://github.com/automl-private/Mighty-DACS@dev",
+  "dacbench @ git+https://github.com/automl/DACBench@development",
+  "torch",
+  "imageio",
+  "modcma",
+  "IOHExperimenter"
 ]
 
 requires-python = ">=3.11"

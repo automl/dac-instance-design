@@ -2,7 +2,6 @@ defaults:
   - _self_
   - algo: ppo
   - env: cma_es
-  - search_space: dqn_gym_classic
   - override hydra/job_logging: colorlog
   - override hydra/hydra_logging: colorlog
 
