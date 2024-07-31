@@ -18,13 +18,13 @@ algorithm_kwargs:
     n_envs: ???
 
   # Training
-  learning_rate: 0.001
-  batch_size: 10000  # Batch size for training.
+  learning_rate: 0.0003
+  batch_size: 64  # Batch size for training.
   gamma: 0.99  # The amount by which to discount future rewards.
   n_gradient_steps: 10  # Number of epochs for updating policy.
   ppo_clip: 0.2  # Clipping parameter for PPO.
   value_loss_coef: 0.5  # Coefficient for value loss.
-  entropy_coef: 0.01  # Coefficient for entropy loss.
+  entropy_coef: 0.00  # Coefficient for entropy loss.
   max_grad_norm: 0.5  # Maximum value for gradient clipping.
   
   policy_class: mighty.mighty_exploration.StochasticPolicy  # Policy class for exploration
